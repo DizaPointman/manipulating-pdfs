@@ -5,7 +5,7 @@ import copy
 
 def rotating_pdf_simple():
     #every odd page is rotated counterclockwise by ninety degrees
-    pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs" /"ugly.pdf")
+    pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs" /"ugly.pdf")
     pdf_reader = PdfReader(pdf_path)
     pdf_writer = PdfWriter()
     
@@ -18,7 +18,7 @@ def rotating_pdf_simple():
 
 def rotating_pdf_advanced():
     #every odd page is rotated counterclockwise by ninety degrees
-    pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs" /"ugly.pdf")
+    pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs" /"ugly.pdf")
     pdf_reader = PdfReader(pdf_path)
     pdf_writer = PdfWriter()
     
@@ -35,7 +35,7 @@ def rotating_pdf_advanced():
     
 
 def cropping_pdf_simple():
-    pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs" /"half_and_half.pdf")
+    pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs" /"half_and_half.pdf")
     pdf_reader = PdfReader(pdf_path)
     pdf_writer = PdfWriter()
     #first_page has a .mediabox attribute that represents a rectangular area defining the boundaries of the page
@@ -61,7 +61,7 @@ def cropping_pdf_advanced():
     
     #work with a copy of first page so that the page you just extracted stays intact
     #importing the copy module from Python’s standard library and using deepcopy() to make a copy of the page   
-    pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs" /"half_and_half.pdf")
+    pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs" /"half_and_half.pdf")
     pdf_reader = PdfReader(pdf_path)
     pdf_writer = PdfWriter()
     first_page = pdf_reader.pages[0]
@@ -96,7 +96,7 @@ def cropping_pdf_advanced():
 
 def encrypting_pdf_simple():
     
-    pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs" /"newsletter.pdf")
+    pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs" /"newsletter.pdf")
     pdf_reader = PdfReader(pdf_path)
     pdf_writer = PdfWriter()
     
@@ -106,13 +106,13 @@ def encrypting_pdf_simple():
     user_pwd = "SuperSecret"
     owner_pwd = "ReallySuperSecret"
     pdf_writer.encrypt(user_password=user_pwd, owner_password=owner_pwd)
-    output_path = Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_output/newsletter_protected.pdf"
+    output_path = Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_output/newsletter_protected.pdf"
     pdf_writer.write(output_path)
     
 
 def decrypting_pdf_simple():
     
-    pdf_path = Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_output" /"newsletter_protected.pdf"
+    pdf_path = Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_output" /"newsletter_protected.pdf"
     pdf_reader = PdfReader(pdf_path)
     
     pdf_reader.decrypt(password="SuperSecret")

@@ -2,15 +2,15 @@ from pathlib import Path
 from pypdf import PdfReader, PdfWriter, PdfMerger
 
 
-#pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs" /"Pride_and_Prejudice.pdf")
+#pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs" /"Pride_and_Prejudice.pdf")
 
-pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs" /"antrag-sgb2_ba042689.pdf")
+pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs" /"antrag-sgb2_ba042689.pdf")
 
-#pdf_path = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger" /"blank.pdf")
+#pdf_path = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs" /"blank.pdf")
 
-reports_dir_append = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs/expense_reports")
+reports_dir_append = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs/expense_reports")
 
-reports_dir_merge = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_pdfs/quarterly_report")
+reports_dir_merge = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_pdfs/quarterly_report")
     
 
 pdf_reader = PdfReader(pdf_path)
@@ -38,7 +38,7 @@ def pdf_extract_data():
 
 def save_to_txt():
     
-    txt_file = (Path.home()/"Projects/VSCode_Projects/Myfuture/PaperTiger/test_output" /"test.txt")
+    txt_file = (Path.home()/"Projects/VSCode_Projects/Tutorialhell/manipulating-pdfs/test_output" /"test.txt")
     content = [
         f"{pdf_reader.metadata.title}",
         f"Number of pages: {len(pdf_reader.pages)}",            
@@ -107,7 +107,7 @@ def merging_pdfs():
 
 if __name__ == '__main__':
     
-    #pdf_extract_metadata()
+    pdf_extract_metadata()
     #pdf_extract_data()
     #save_to_txt()
     #pdf_write_new()
@@ -115,4 +115,4 @@ if __name__ == '__main__':
     #extract_multiple_pages_and_write_new_pdf()
     #appending_from_reader_to_writer()
     #appending_pdfs()
-    merging_pdfs()
+    #merging_pdfs()
