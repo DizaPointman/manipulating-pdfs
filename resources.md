@@ -51,3 +51,7 @@ https://pypi.org/project/pdfforms/
 
 
 https://github.com/WestHealth/pdf-form-filler
+
+# Useful?
+
+pdfminer
